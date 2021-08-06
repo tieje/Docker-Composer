@@ -1,0 +1,16 @@
+version: '3.9'
+
+services: 
+  fullmetal:
+    privileged: true
+    image: fullmetal
+    build: ./
+    ports:
+      - "1000:1000"
+    environment:
+      MYSQL_ROOT_PASSWORD: fullmetal
+    volumes:
+      - sqlalchemy-data:/home/tieje/Documents/sqlalchemy-data
+
+volumes:
+  sqlalchemy-data:
